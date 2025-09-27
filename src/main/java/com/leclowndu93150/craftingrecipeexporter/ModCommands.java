@@ -1,4 +1,4 @@
-package com.leclowndu93150.craftingrecipeexporter;
+package ru.rtxbb.craftexport;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
@@ -23,7 +23,17 @@ public class ModCommands {
         );
 
         dispatcher.register(
+                Commands.literal("cexport")
+                        .executes(ModCommands::openMenu)
+        );
+
+        dispatcher.register(
                 Commands.literal("cre")
+                        .executes(ModCommands::openMenu)
+        );
+
+        dispatcher.register(
+                Commands.literal("kjsgui")
                         .executes(ModCommands::openMenu)
         );
 

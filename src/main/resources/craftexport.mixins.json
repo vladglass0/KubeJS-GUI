@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.leclowndu93150.craftingrecipeexporter.mixin",
+  "package": "ru.rtxbb.craftexport.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "craftingrecipeexporter.refmap.json",
+  "refmap": "craftexport.refmap.json",
   "mixins": [
   ],
   "client": [

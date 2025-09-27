@@ -1,4 +1,4 @@
-package com.leclowndu93150.craftingrecipeexporter;
+package ru.rtxbb.craftexport;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -257,7 +257,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         try {
             Path scriptsDir = FMLPaths.GAMEDIR.get().resolve("kubejs/server_scripts");
             Files.createDirectories(scriptsDir);
-            Path recipePath = scriptsDir.resolve("exported_recipes.js");
+            Path recipePath = scriptsDir.resolve("rt_recipes.js");
 
             String newRecipe = generateShapelessKubeJS();
             String existingContent = "";
@@ -339,7 +339,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         try {
             Path scriptsDir = FMLPaths.GAMEDIR.get().resolve("kubejs/server_scripts");
             Files.createDirectories(scriptsDir);
-            Path recipePath = scriptsDir.resolve("exported_recipes.js");
+            Path recipePath = scriptsDir.resolve("rt_recipes.js");
 
             String newRecipe = generateKubeJS();
             String existingContent = "";
@@ -469,8 +469,12 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
 
         StringBuilder script = new StringBuilder();
         ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
-        script.append("event.remove({ output: '").append(outputId).append("' });\n");
+        
 
+        if (!Screen.hasControlDown()) {
+            script.append("    ");
+        }
+        script.append("event.remove({ output: '").append(outputId).append("' });\n");
         if (!Screen.hasControlDown()) {
             script.append("    ");
         }
@@ -599,8 +603,13 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
 
         ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
 
-        script.append("event.remove({ output: '").append(outputId).append("' });\n");
+        
 
+        if (!Screen.hasControlDown()) {
+            script.append("    ");
+        }
+
+        script.append("event.remove({ output: '").append(outputId).append("' });\n");
         if (!Screen.hasControlDown()) {
             script.append("    ");
         }

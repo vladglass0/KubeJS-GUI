@@ -1,4 +1,4 @@
-package com.leclowndu93150.craftingrecipeexporter;
+package ru.rtxbb.craftexport;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
