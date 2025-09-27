@@ -23,7 +23,17 @@ public class ModCommands {
         );
 
         dispatcher.register(
+                Commands.literal("cexport")
+                        .executes(ModCommands::openMenu)
+        );
+
+        dispatcher.register(
                 Commands.literal("cre")
+                        .executes(ModCommands::openMenu)
+        );
+
+        dispatcher.register(
+                Commands.literal("kjsgui")
                         .executes(ModCommands::openMenu)
         );
 

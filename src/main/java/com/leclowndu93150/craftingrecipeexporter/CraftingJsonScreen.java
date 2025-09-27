@@ -257,7 +257,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         try {
             Path scriptsDir = FMLPaths.GAMEDIR.get().resolve("kubejs/server_scripts");
             Files.createDirectories(scriptsDir);
-            Path recipePath = scriptsDir.resolve("exported_recipes.js");
+            Path recipePath = scriptsDir.resolve("rt_recipes.js");
 
             String newRecipe = generateShapelessKubeJS();
             String existingContent = "";
@@ -339,7 +339,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         try {
             Path scriptsDir = FMLPaths.GAMEDIR.get().resolve("kubejs/server_scripts");
             Files.createDirectories(scriptsDir);
-            Path recipePath = scriptsDir.resolve("exported_recipes.js");
+            Path recipePath = scriptsDir.resolve("rt_recipes.js");
 
             String newRecipe = generateKubeJS();
             String existingContent = "";
