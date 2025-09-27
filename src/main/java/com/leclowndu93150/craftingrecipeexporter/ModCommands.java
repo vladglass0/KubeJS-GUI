@@ -1,4 +1,4 @@
-package com.leclowndu93150.craftingrecipeexporter;
+package ru.rtxbb.craftexport;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;

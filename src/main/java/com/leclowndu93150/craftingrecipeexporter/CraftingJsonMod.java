@@ -1,4 +1,4 @@
-package com.leclowndu93150.craftingrecipeexporter;
+package ru.rtxbb.craftexport;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.common.MinecraftForge;
