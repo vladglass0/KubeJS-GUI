@@ -468,6 +468,8 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         }
 
         StringBuilder script = new StringBuilder();
+        ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
+        script.append("event.remove({ output: '").append(outputId).append("' });\n");
 
         if (!Screen.hasControlDown()) {
             script.append("    ");
@@ -477,7 +479,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         if (!Screen.hasControlDown()) {
             script.append("        ");
         }
-        ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
+        
         script.append("    Item.of('").append(outputId).append("'");
         if (output.getCount() > 1) {
             script.append(", ").append(output.getCount());
@@ -595,6 +597,10 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
 
         StringBuilder script = new StringBuilder();
 
+        ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
+
+        script.append("event.remove({ output: '").append(outputId).append("' });\n");
+
         if (!Screen.hasControlDown()) {
             script.append("    ");
         }
@@ -603,7 +609,7 @@ public class CraftingJsonScreen extends AbstractContainerScreen<CraftingJsonMenu
         if (!Screen.hasControlDown()) {
             script.append("        ");
         }
-        ResourceLocation outputId = ForgeRegistries.ITEMS.getKey(output.getItem());
+        
         script.append("    Item.of('").append(outputId).append("'");
         if (output.getCount() > 1) {
             script.append(", ").append(output.getCount());

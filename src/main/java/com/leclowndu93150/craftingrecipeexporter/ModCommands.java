@@ -18,6 +18,11 @@ public class ModCommands {
         );
 
         dispatcher.register(
+                Commands.literal("craftexport")
+                        .executes(ModCommands::openMenu)
+        );
+
+        dispatcher.register(
                 Commands.literal("cre")
                         .executes(ModCommands::openMenu)
         );
